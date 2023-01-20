@@ -14,16 +14,16 @@ class Game:
         self.game_window = pygame.display.set_mode((self.width,self.height))
 
         self.clock = pygame.time.Clock()
-        self.background = GameObject(0,0, self.width, self.height, 'assets/background.png')
-        self.victory = GameObject(0,0, self.width, self.height, 'assets/victory.png')
-        self.treasure = GameObject(375, 50, 50, 50, 'assets/treasure.png')
+        self.background = GameObject(0,0, self.width, self.height, 'PyGame1/assets/background.png')
+        self.victory = GameObject(0,0, self.width, self.height, 'PyGame1/assets/victory.png')
+        self.treasure = GameObject(375, 50, 50, 50, 'PyGame1/assets/treasure.png')
         
         self.level = 1.0
        
         self.reset_map()
        
     def reset_map(self):
-        self.player = Player(375, 700, 50, 50, 'assets/player.png', 10)
+        self.player = Player(375, 700, 50, 50, 'PyGame1/assets/player.png', 10)
 
         speed = 5 + (self.level * 5)
 
@@ -31,18 +31,18 @@ class Game:
             self.display_victory()
         elif self.level >= 4.0:
             self.enemies = [
-                Enemy(0, 500, 50, 50, 'assets/enemy.png', speed),
-                Enemy(750, 300, 50, 50, 'assets/enemy.png', speed),
-                Enemy(0, 200, 50, 50, 'assets/enemy.png', speed)
+                Enemy(0, 500, 50, 50, 'PyGame1/assets/enemy.png', speed),
+                Enemy(750, 300, 50, 50, 'PyGame1/assets/enemy.png', speed),
+                Enemy(0, 200, 50, 50, 'PyGame1/assets/enemy.png', speed)
             ]
         elif self.level >= 2.0:  
             self.enemies = [
-                Enemy(0, 500, 50, 50, 'assets/enemy.png', speed),
-                Enemy(750, 300, 50, 50, 'assets/enemy.png', speed),
+                Enemy(0, 500, 50, 50, 'PyGame1/assets/enemy.png', speed),
+                Enemy(750, 300, 50, 50, 'PyGame1/assets/enemy.png', speed),
             ] 
         else:
             self.enemies = [
-                Enemy(0, 500, 50, 50, 'assets/enemy.png', speed)
+                Enemy(0, 500, 50, 50, 'PyGame1/assets/enemy.png', speed)
             ] 
          
     def display_victory(self):
